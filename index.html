@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{ toUpperCase(title) }}</h1>
+        
+        <div class="main">
+            
+            <input type="text" placeholder="Введите имя" v-model="text">
+            <select v-model="game">
+                <option >csgo</option>
+                <option >dota</option>
+                <option >pubg</option>
+            </select>
+                
+            <button @click="addName">Добавить игроков</button>  
+            <p :style="{
+                color:'red',
+                fontSize: '30px'
+            }">всего игроков - {{ countGamers }}</p> 
+            
+        </div>   
+        <hr />   
+        
+        <div class="items"><hr />
+            <div class="item">
+                <h2> Csgo </h2>
+                
+                 <div class="box" v-for="player in list.csgo" :key="player">
+                    <p> {{ toUpperCase(player) }} </p>
+                    
+                 </div>
+            </div>
+            <div class="item">
+                <h2>Dota </h2>
+                 <div class="box" v-for="player in list.dota" :key="player">
+                    <p> {{ toUpperCase(player) }} </p>
+                 </div>
+            </div>
+            <div class="item">
+                <h2>Pubg </h2>
+                 <div class="box" v-for="player in list.pubg" :key="player">
+                    <p> {{ toUpperCase(player) }} </p>
+                 </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
+    
+    <script src="app.js"></script>
+</body>
+</html>
