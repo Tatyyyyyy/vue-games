@@ -30,23 +30,25 @@
             }">всего игроков - {{ countGamers }}</p> 
             
         </div>   
-        <hr />   
+         
         
         <div class="items">
             <div class="item">
                 <h2> Csgo </h2>
                 
-                 <div class="box" v-for="player in list.csgo" :key="player">
-                    <p> {{ toUpperCase(player) }} </p>
-                    
-                 </div>
+                <div class="box" v-for="player in list.csgo" :key="player">
+                    <p > {{ toUpperCase(player) }} </p>
+                </div>
+                 
             </div>
+            
             <div class="item">
                 <h2>Dota </h2>
                  <div class="box" v-for="player in list.dota" :key="player">
                     <p> {{ toUpperCase(player) }} </p>
                  </div>
             </div>
+            
             <div class="item">
                 <h2>Pubg </h2>
                  <div class="box" v-for="player in list.pubg" :key="player">
